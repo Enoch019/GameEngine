@@ -3,7 +3,7 @@ project(PepGE VERSION 0.0.0)
 
 
 add_subdirectory(ext/SDL)
-# add_subdirectory(ext/Core)
+add_subdirectory(ext/Core)
 
 add_library(
     "${PROJECT_NAME}_LIB"
