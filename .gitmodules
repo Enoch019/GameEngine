@@ -4,6 +4,3 @@
 [submodule "ext/Core"]
 	path = ext/Core
 	url = https://github.com/ae2f/Core
-[submodule "ext/EGL"]
-	path = ext/EGL
-	url = https://github.com/McNopper/EGL
