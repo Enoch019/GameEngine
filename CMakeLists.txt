@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
-project(PepGE)
+project(PepGE VERSION 0.0.0)
+
 add_subdirectory(ext/SDL)
 add_subdirectory(ext/Core)
 
@@ -18,4 +19,7 @@ add_executable(
     "srcbin/main.c"
 )
 
-target_link_libraries(${PROJECT_NAME}_BIN ${PROJECT_NAME}_LIB)
+target_link_libraries(
+    ${PROJECT_NAME}_BIN 
+    ${PROJECT_NAME}_LIB
+)
