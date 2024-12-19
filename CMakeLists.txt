@@ -1,8 +1,18 @@
 cmake_minimum_required(VERSION 3.10)
 project(PepGE VERSION 0.0.0)
 
+find_package(OpenGL REQUIRED)
+link_libraries(OpenGL::OpenGL)
+
 add_subdirectory(ext/SDL)
 add_subdirectory(ext/Core)
+
+if(_WIN32)
+
+add_subdirectory(ext/EGL/EGL)
+link_libraries(egl)
+
+endif()
 
 add_library(
     "${PROJECT_NAME}_LIB"
