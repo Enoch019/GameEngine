@@ -24,3 +24,19 @@ target_link_libraries(
     ${PROJECT_NAME}_BIN 
     ${PROJECT_NAME}_LIB
 )
+
+if(WIN32)
+    set(lib_ext ".dll")
+elseif(APPLE)
+    set(lib_ext ".dylib")
+else()
+    set(lib_ext ".so")
+endif()
+
+foreach(tar SDL3-shared)
+    add_custom_command(TARGET ${PROJECT_NAME}_LIB POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        $<TARGET_FILE:${tar}>
+        ${PROJECT_BINARY_DIR}
+    )
+endforeach()
