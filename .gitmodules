@@ -1,0 +1,6 @@
+[submodule "ext/SDL"]
+	path = ext/SDL
+	url = https://github.com/libsdl-org/SDL
+[submodule "ext/Core"]
+	path = ext/Core
+	url = https://github.com/ae2f/Core
