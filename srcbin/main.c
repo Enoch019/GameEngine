@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <SDL3/SDL.h>
+#include <SDL3/SDL_keyboard.h>
+#include <KeyInMgr.h>
+
+int thing();
 
 int main(int argc, char* argv[]) {
     SDL_Window* window = NULL; 
@@ -29,13 +33,20 @@ int main(int argc, char* argv[]) {
     int quit = 0; 
     while(!quit){
         while(SDL_PollEvent(&event)){
-            switch(event.type){
-            case SDL_EVENT_QUIT:
-                SDL_Log("Quit");
-                quit = 1; 
-                break;  
+            switch(event.type)
+            {
+                case SDL_EVENT_QUIT:
+                    SDL_Log("Quit");
+                    quit = 1; 
+                    break;  
+
+                Input(&event); 
+
             }
+    
         }
+
+        //printf("%d\n" , thing());
 
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0xff, 0xff);

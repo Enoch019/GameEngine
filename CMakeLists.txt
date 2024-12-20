@@ -7,7 +7,8 @@ add_subdirectory(ext/Core)
 
 add_library(
     "${PROJECT_NAME}_LIB"
-    "src/PepGE.c" "include/PepGE.h"
+    "src/PepGE.c" "include/PepGE.h" 
+    "src/KeyInMgr.c" "include/KeyInMgr.h"
 )
 
 target_include_directories(${PROJECT_NAME}_LIB PUBLIC include)
@@ -18,6 +19,7 @@ target_link_libraries(${PROJECT_NAME}_LIB Core)
 add_executable(
     ${PROJECT_NAME}_BIN
     "srcbin/main.c"
+    "srcbin/Thing.c"
 )
 
 target_link_libraries(
